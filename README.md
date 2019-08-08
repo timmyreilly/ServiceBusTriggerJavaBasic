@@ -14,3 +14,25 @@
 
 
 ```
+
+Add a `local.settings.json` next to host.json and run : 
+
+`mvn clean package`
+& 
+`mvn azure-functions:run`
+
+If you want to deploy you'll need to edit the Azure Function Deployment configuration in the `pom.xml`
+
+```xml
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <azure.functions.maven.plugin.version>1.3.3</azure.functions.maven.plugin.version>
+        <azure.functions.java.library.version>1.3.0</azure.functions.java.library.version>
+        <functionAppName>ChangeMeToAAppFunctionAppName</functionAppName>
+        <functionAppRegion>westus</functionAppRegion>
+        <stagingDirectory>${project.build.directory}/azure-functions/${functionAppName}</stagingDirectory>
+        <functionResourceGroup>ChangeMeToAResourceGroupName</functionResourceGroup>
+    </properties>
+```
