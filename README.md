@@ -30,6 +30,8 @@ Add a `local.settings.json` next to host.json and run :
 & 
 `mvn azure-functions:run`
 
+*You'll need to run `mvn clean package` before every local run or deployment*  
+
 If you want to deploy you'll need to edit the Azure Function Deployment configuration in the `pom.xml`
 
 ```xml
