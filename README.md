@@ -20,6 +20,7 @@
 ### Prerequisites 
 - JDK 
 - [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local) 
+- [.NET Core 2 SDK](https://dotnet.microsoft.com/download)
 
 ## Instructions 
 
