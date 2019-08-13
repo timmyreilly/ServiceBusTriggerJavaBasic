@@ -5,6 +5,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import com.microsoft.azure.functions.annotation.*;
@@ -20,7 +21,7 @@ public class Function {
     @FunctionName("ServiceBusQueueTrigger-Java")
     public void run(
             @ServiceBusQueueTrigger(name = "message", queueName = "mvnDemoQueue", connection = "StorageToIndexer_SERVICEBUS") String message,
-            final ExecutionContext context) {
+            final ExecutionContext context) throws Exception {
         context.getLogger().info("Java HTTP trigger processed a request.");
 
 
@@ -57,8 +58,8 @@ public class Function {
 
             context.getLogger().info(content.toString());
 
-        } catch (IOException e) {
-            e.printStackTrace();
+        // } catch (IOException e) {
+        //     e.printStackTrace();
         } finally {
             connection.disconnect();
         }
