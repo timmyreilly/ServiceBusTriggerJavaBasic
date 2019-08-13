@@ -15,6 +15,14 @@
 
 ```
 
+## Instructions: 
+
+### Prerequisites 
+- JDK 
+- [Azure Functions Core Tools](https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local) 
+
+## Instructions 
+
 Add a `local.settings.json` next to host.json and run : 
 
 `mvn clean package`
